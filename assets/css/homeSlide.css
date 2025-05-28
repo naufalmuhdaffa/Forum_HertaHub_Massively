@@ -1,0 +1,70 @@
+.slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+}
+
+/* Tombol navigasi */
+.navg {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: rgb(255, 0, 0);
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  padding:0 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+.navg:hover {
+  background-color: rgba(0, 255, 8, 0.3);
+  color: blue;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+/* Default: Desktop (landscape ditampilkan, portrait disembunyikan) */
+.slide.portrait {
+  display: none;
+}
+
+.slide.landscape {
+  display: block;
+}
+
+/* Ketika layar kecil (mobile/tablet max 1024px): landscape disembunyikan, portrait ditampilkan */
+@media (max-width: 1024px) {
+  .slide.portrait {
+    display: block;
+  }
+
+  .slide.landscape {
+    display: none;
+  }
+}

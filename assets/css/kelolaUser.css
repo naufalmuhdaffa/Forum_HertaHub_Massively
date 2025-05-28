@@ -1,0 +1,222 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background: linear-gradient(#0d0d2b, #1d1d3f);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Orbitron", sans-serif;
+  background: radial-gradient(circle at top, #0a0f2c, #000);
+  color: #fff;
+  min-height: 100vh;
+  background-image: url("../../images/hertaStation.png");
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(2px);
+}
+
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  background: rgba(15, 15, 30, 0.85);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+th {
+  background-color: rgba(0, 255, 255, 0.2);
+  color: #00ffff;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+button {
+  margin: 4px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:nth-child(1) {
+  background-color: #00ffea;
+}
+
+button:nth-child(2) {
+  background-color: #ffaa00;
+}
+
+button:nth-child(3) {
+  background-color: #6a5acd;
+  color: #fff;
+}
+
+button:nth-child(4) {
+  background-color: #ff4c4c;
+  color: #fff;
+}
+
+.berandaBtn {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.backBtn {
+  background-color: transparent;
+  border: 2px solid #00ffff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1em;
+  color: #000000;
+  text-shadow: 0 0 4px #00ffff;
+  transition: 0.3s;
+}
+
+.backBtn a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.backBtn:hover {
+  background-color: #00ffff;
+  color: #000;
+  box-shadow: 0 0 12px #00ffff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ffff;
+  border-radius: 8px;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  table {
+    font-size: 0.95em;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 768px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  }
+
+  td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    padding-left: 10px;
+    font-weight: bold;
+    color: #00ffff;
+    text-align: left;
+  }
+
+  button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .backBtn {
+    width: 100%;
+  }
+}
+
+.toast {
+  visibility: hidden;
+  min-width: 200px;
+  background: #f44336;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 8px 16px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  transition: visibility 0s, opacity 0.3s ease;
+  opacity: 0;
+}
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+}

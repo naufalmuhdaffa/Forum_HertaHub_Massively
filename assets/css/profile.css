@@ -1,0 +1,246 @@
+input#usernameInput, input[type="password"]{
+  box-shadow: inset 0 0 0 1px rgb(0, 0, 0);
+}
+
+select#roleSelect{
+  box-shadow: inset 0 0 0 1px rgb(0, 0, 0);
+  background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 30px;
+}
+select#roleSelect:hover{
+  cursor: pointer;
+}
+
+/* Profile header */
+.profile-header {
+  background: url(../../images/Black.png);
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  gap: 16px;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+/* Profile picture container */
+.avatar-container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+.avatar-container img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: -80px;
+  object-fit: cover;
+}
+.avatar-container .border-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Profile info section */
+.profile-info {
+  background: #fff;
+  max-width: 800px;
+  margin: 80px auto 20px;
+  padding: 20px;
+}
+.profile-info h2 {
+  margin-bottom: 10px;
+}
+.info-group {
+  margin-bottom: 15px;
+}
+.info-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.info-group input,
+.info-group select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.info-group button {
+  margin-top: 5px;
+}
+
+/* Border gallery modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+}
+.border-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.border-item {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  object-fit: cover;
+}
+.border-item.selected {
+  border-color: #007bff;
+}
+#borderOverlay {
+  position: absolute;
+  object-fit: contain;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Avatar */
+
+#avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.imgContainer{
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Username */
+#displayUsername {
+  font-size: 1.5rem;
+  font-weight: bold;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+#editAvatarBtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: transparent;
+  font-size: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-left: 30px;
+  margin-top: 25px;
+}
+
+/* Hover effect */
+.profile-image-container:hover #editAvatarBtn {
+  opacity: 1;
+}
+
+/* Untuk layar kecil, seperti smartphone */
+@media (max-width: 768px) {
+  .profile-container {
+    align-items: center;
+    padding: 10px;
+  }
+
+  .profile-image-container {
+    width: 150px;
+    height: 150px;
+  }
+
+  .profile-image-container img,
+  .profile-border-preview {
+    width: 100%;
+    height: auto;
+  }
+
+  .form-group {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .profile-form button {
+    width: 100%;
+  }
+    .profile-header {
+    align-items: center;
+  }
+
+  #displayUsername {
+    font-size: 1.25rem;
+  }
+}
+
+.border-container:hover .delete-border-btn {
+  display: block;
+}
+.delete-border-btn {
+  display: none;
+  font-size: 0.8em;
+  padding: 0px 5px;
+  border-radius: 5px;
+}
+
+.toast {
+  visibility: hidden;
+  min-width: 200px;
+  background: #f44336;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 8px 16px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  transition: visibility 0s, opacity 0.3s ease;
+  opacity: 0;
+}
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+}
